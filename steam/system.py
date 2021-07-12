@@ -25,6 +25,6 @@ def system(token):
         response = urequests.post(url=url, json=data, headers=HEADERS)
         if response.status_code == 200:
             res = response.json()
-            return res['status']
+            return res, res['status']
     except Exception as e:
-        return False
+        return 0, False
